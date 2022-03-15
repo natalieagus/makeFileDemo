@@ -2,34 +2,34 @@
 REMOVE = rm
 CC = gcc
 DEPENDENCIES = main.c hello.c factorial.c binary.c
-OUT = myexecoutprogMacro.o
+OUT = prog.o
 
 # Explicit rules, all the commands you can call with make 
 # (note: the <tab> in the command line is necessary for make to work) 
 # target:  dependency1 dependency2 ...
 #       <tab> command
 
-#Called by: make myexecout 
+#Called by: make prg 
 #also executed when you just called make. This calls the first target. 
-myexecout: main.c hello.c factorial.c binary.c
-	gcc -o myexecoutprog.o main.c hello.c factorial.c binary.c 
+prog: main.c hello.c factorial.c binary.c
+	gcc -o prog.o main.c hello.c factorial.c binary.c 
 
-myexecoutFromMacro: $(DEPENDENCIES)
+progFromMacro: $(DEPENDENCIES)
 	$(CC) $(DEPENDENCIES) -o $(OUT)
 
-myexecout2: main.o hello.o factorial.o binary.o
-	gcc -o myexecoutprog2 main.o hello.o factorial.o binary.o
+prog2: main.o hello.o factorial.o binary.o
+	gcc -o prog2 main.o hello.o factorial.o binary.o
 
 
 ##make clean will remove myexecoutprog.o from the directory
 clean:
-	rm myexecoutprog.o
+	rm prog.o
 
 cleanFromMacro: 
 	$(REMOVE) $(OUT)
 
 clean2:
-	rm myexecoutprog2 *.o
+	rm prog2 *.o
 
 #Implicit rules
 main.o : main.c functions.h

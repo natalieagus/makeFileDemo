@@ -14,5 +14,6 @@ void decimalToBinary (int num) {
 
             //shift one to the right
             mask = mask >> 1;
-        }
+	   
+}
 }
