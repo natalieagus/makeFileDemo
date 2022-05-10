@@ -14,7 +14,7 @@ OUT = prog.o
 prog: main.c hello.c factorial.c binary.c
 	gcc -o prog.o main.c hello.c factorial.c binary.c 
 
-progFromMacro: $(DEPENDENCIES)
+prog1: $(DEPENDENCIES)
 	$(CC) $(DEPENDENCIES) -o $(OUT)
 
 prog2: main.o hello.o factorial.o binary.o
@@ -25,7 +25,7 @@ prog2: main.o hello.o factorial.o binary.o
 clean:
 	rm prog.o
 
-cleanFromMacro: 
+clean1: 
 	$(REMOVE) $(OUT)
 
 clean2:
