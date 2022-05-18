@@ -2,7 +2,8 @@
 
 #define BUFFERLENGTH 64
 
-int main(){
+int main()
+{
    print_hello();
 
    printf("Key in a number to obtain its factorial:\n");
@@ -11,7 +12,7 @@ int main(){
    fgets(inputNum, BUFFERLENGTH, stdin);
 
    int num = atoi(inputNum);
-   printf("The factorial of %d is %d \n", num, factorial(5));
+   printf("The factorial of %d is %d \n", num, factorial(num));
 
    printf("The 32-bit binary representation of %d is ", num);
    decimalToBinary(num);
